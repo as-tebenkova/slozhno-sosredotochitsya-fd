@@ -44,6 +44,14 @@
   border: 1px solid var(--hover-color, #32312d66);
 }
 
+.theme-light .title-decor {
+  color: var(--text-color, #353430);
+}
+
+.theme-light .title {
+  color: var(--text-color, #353430);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --accent-color: #ff8dcb;
@@ -75,5 +83,13 @@
 
   .theme-auto .header__theme-menu-button:hover {
     border: 1px solid var(--hover-color, #32312d66);
+  }
+
+  .theme-auto .title-decor {
+    color: var(--text-color, #353430);
+  }
+
+  .theme-auto .title {
+    color: var(--text-color, #353430);
   }
 }
