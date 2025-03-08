@@ -24,7 +24,7 @@
   right: 40px;
   top: 10px;
   line-height: 139%;
-  color: var(--accent-color, #ff0070);
+  color: var(--accent-bg-color, #ff0070);
   text-transform: uppercase;
 }
 
@@ -33,11 +33,11 @@
   inline-size: 9px;
   block-size: 9px;
   border-radius: 50%;
-  background-color: var(--accent-color, #ff0070);
+  background-color: var(--accent-bg-color, #ff0070);
   position: absolute;
   top: 7px;
   left: 40px;
-  box-shadow: 0px 0px 4px 2px var(--accent-color, #ff0070);
+  box-shadow: 0px 0px 4px 2px var(--accent-bg-color, #ff0070);
 }
 
 .title-header {
@@ -45,7 +45,7 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
   color: var(--title-color, #db00ff);
-  text-shadow: 4px 4px 0px var(--accent-color, #ff0070);
+  text-shadow: 4px 4px 0px var(--accent-bg-color, #ff0070);
 }
 
 .header__theme-menu {
@@ -64,7 +64,7 @@
   height: 26px;
   background-color: transparent;
   border: none;
-  color: var(--accent-color, #ff0070);
+  color: var(--title-text-color, #ff0070);
   text-transform: lowercase;
 }
 
@@ -98,8 +98,8 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--title-text-color, #ff0070);
+  border-right: 1px solid var(--title-text-color, #ff0070);
   right: 10px;
   top: 10px;
 }
@@ -109,27 +109,13 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--title-text-color, #ff0070);
+  border-left: 1px solid var(--title-text-color, #ff0070);
   left: 10px;
   bottom: 10px;
 }
 
-.intro {
-  display: grid;
-  margin-inline: 10px;
-  margin-block-end: 50px;
-  gap: 20px;
-}
-
-.reasons {
-  display: grid;
-  margin-inline: 10px;
-  margin-block-end: 50px;
-  gap: 20px;
-}
-
-.rools {
+.content-section {
   display: grid;
   margin-inline: 10px;
   margin-block-end: 50px;
@@ -162,8 +148,8 @@
   font-size: 18px;
   line-height: 130%;
   font-weight: 700;
-  color: var(--bg-color, #000028);
-  background-color: var(--accent-color, #ff0070);
+  color: var(--accent-text-color, #000028);
+  background-color: var(--accent-bg-color, #ff0070);
 }
 
 .title {
@@ -171,7 +157,7 @@
   font-size: 18px;
   line-height: 130%;
   font-weight: 700;
-  color: var(--accent-color, #ff0070);
+  color: var(--title-text-color, #ff0070);
 }
 
 .subtitle {
@@ -179,8 +165,8 @@
   font-size: 18px;
   line-height: 130%;
   font-weight: 400;
-  color: var(--bg-color, #000028);
-  background-color: var(--accent-color, #ff0070);
+  color: var(--accent-text-color, #000028);
+  background-color: var(--accent-bg-color, #ff0070);
   margin-block-end: 10px;
 }
 
@@ -193,20 +179,20 @@
   margin-block-start: 10px;
 }
 
-.text_a {
-  text-shadow: 1px 1px 0px var(--accent-color, #ff0070);
+.link {
+  text-shadow: 1px 1px 0px var(--accent-bg-color, #ff0070);
   text-decoration: none;
 }
 
-.text_a:hover {
-  text-decoration: underline;
+.link:hover {
+  border-bottom: 1px solid currentColor;
 }
 
-.text_a:focus {
+.link:focus {
   outline: none;
 }
 
-.text_a:focus-visible {
+.link:focus-visible {
   border: 1px solid currentColor;
 }
 
@@ -215,10 +201,10 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
   color: var(--title-color, #db00ff);
-  text-shadow: 2px 2px 0px var(--accent-color, #ff0070);
+  text-shadow: 2px 2px 0px var(--accent-bg-color, #ff0070);
 }
 
-@media (width >=768px) {
+@media (width >= 768px) {
   .header {
     padding: 20px 20px 20px 0;
     margin-block-end: 60px;
@@ -254,7 +240,7 @@
     bottom: 20px;
   }
 
-  .intro {
+  .content-section {
     margin-inline: 20px;
     margin-block-end: 80px;
     grid-template-columns: 1fr 2fr;
@@ -268,24 +254,12 @@
     grid-column: 2;
   }
 
-  .reasons {
-    margin-inline: 20px;
-    margin-block-end: 80px;
-    grid-template-columns: 1fr 2fr;
-  }
-
   .reasons h2 {
     grid-column: 1;
   }
 
   .reasons article {
     grid-column: 1 / span 2;
-  }
-
-  .rools {
-    margin-inline: 20px;
-    margin-block-end: 80px;
-    grid-template-columns: 1fr 2fr;
   }
 
   .rools h2 {
@@ -369,11 +343,14 @@
 
   .reasons {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: min-content min-content;
   }
 
+.reasons h2 {
+  grid-column: 1 / span 3;
+  max-width: 30%;
+}
+
   .reasons article {
-    grid-row: 2;
     grid-column: auto;
   }
 }

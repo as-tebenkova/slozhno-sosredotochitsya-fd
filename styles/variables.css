@@ -3,10 +3,12 @@
   и их переопределение под различные устройства
 */
 :root {
-  --accent-color: #ff0070;
+  --accent-bg-color: #ff0070;
+  --accent-text-color: #000028;
   --title-color: #db00ff;
   --bg-color: #000028;
   --text-color: #f1b2ce;
+  --title-text-color: #ff0070;
   --hover-color: #ff007066;
 
   --bg-image: url(../images/cover-image-dark.png);
